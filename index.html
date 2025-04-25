@@ -46,39 +46,22 @@
         <div id="loginPage" class="login-container">
             <img src="logo.png" alt="">
 
-            <div class="login-card">
+            <div class="login-card" id="loginCard">
                 <div class="login-title">تسجيل الدخول</div>
                 <div class="input-group">
-                    <label for="phoneInput">رقم الهاتف</label>
-                    <input type="tel" id="phoneInput" placeholder="مثال: 966501234567">
+                    <input type="tel" id="phoneInput" placeholder="رقم الهاتف">
                 </div>
                 <div class="input-group">
-                    <label for="passwordInput">كلمة المرور</label>
-                    <input type="password" id="passwordInput" placeholder="********">
+                    <input type="password" id="passwordInput" placeholder="كلمه السر ">
                 </div>
                 
                 <button id="loginBtn" class="btn btn-primary" onclick="login()">
                     <i class="fas fa-sign-in-alt"></i> دخول
                 </button>
                 <div id="errorMsg" class="error-msg"></div>
-                <button id="forgotPasswordBtn" class="btn btn-link" style="margin-top: 15px; color: var(--primary);" onclick="showForgotPasswordModal()">
-                    <i class="fas fa-key"></i> نسيت كلمة المرور؟
-                </button>
-                
-                <!-- نافذة استعادة كلمة المرور -->
-                <div id="forgotPasswordModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
-                    <div style="background: white; padding: 30px; border-radius: 10px; width: 90%; max-width: 400px;">
-                        <h2 style="color: var(--primary); margin-bottom: 20px;">استعادة كلمة المرور</h2>
-                        <div class="input-group">
-                            <label for="recoveryEmail">البريد الإلكتروني المسجل</label>
-                            <input type="email" id="recoveryEmail" placeholder="example@example.com">
-                        </div>
-                        <button class="btn btn-primary" onclick="sendPasswordResetEmail()">إرسال رابط الاستعادة</button>
-                        <button class="btn btn-link" onclick="hideForgotPasswordModal()" style="margin-top: 10px;">إلغاء</button>
-                        <div id="recoveryMsg" style="margin-top: 15px;"></div>
-                    </div>
-                </div>
-
+                <a href="send Email.html" style="text-decoration: none; color: #1900ff;">نسيت كلمه السر</a>
+            </div>
+               
 
             </div>
         </div>
