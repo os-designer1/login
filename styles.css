@@ -169,8 +169,7 @@ body {
       text-decoration: none;
       color: rgb(31, 31, 31);
       font-size: 25px;
-      margin-left: 40px;
-  }
+      margin-left: 40px;  }
   
   @media (max-width: 834px) {
     .logo-top{
@@ -626,3 +625,4 @@ text-align: center;
 padding: 10px;
 border-radius: 5px;
 }
+
