@@ -58,9 +58,13 @@
                     <input type="password" id="passwordInput" placeholder="كلمه السر ">
                 </div>
                 
-                <button id="loginBtn" class="btn btn-primary" onclick="login()">
-                    <i class="fas fa-sign-in-alt"></i> دخول
+                <button id="loginBtn" class="btn btn-primary" onclick="handleLoginClick()">
+                    <span id="loginBtnSpinner" style="display:none; margin-left:6px;">
+                        <i class="fas fa-spinner fa-spin"></i>
+                    </span>
+                    <span id="loginBtnText"><i class="fas fa-sign-in-alt"></i> دخول</span>
                 </button>
+
                 <div id="errorMsg" class="error-msg"></div>
                 <a href="send Email.html" style="text-decoration: none; color: #1900ff;">نسيت كلمه السر</a>
             </div>
@@ -113,6 +117,23 @@
 
 
 <script>
+
+function handleLoginClick() {
+                    const btn = document.getElementById('loginBtn');
+                    const spinner = document.getElementById('loginBtnSpinner');
+                    const btnText = document.getElementById('loginBtnText');
+                    btn.disabled = true;
+                    spinner.style.display = 'inline-block';
+                    btnText.style.opacity = '0.6';
+                    login().finally(() => {
+                        btn.disabled = false;
+                        spinner.style.display = 'none';
+                        btnText.style.opacity = '1';
+                    });
+                }
+
+
+
 // تعديل التهيئة
 const firebaseConfig = {
     apiKey: "AIzaSyAIL9B-CijJ_1jQelALW0hdXV2bzqBhjnw",
@@ -320,13 +341,7 @@ function displayProfile(customer) {
     hideHeadersOnProfile(true);
 }
 
-// عدل دالة تسجيل الخروج
-function logout() {
-    document.getElementById('loginPage').style.display = 'flex';
-    document.getElementById('profilePage').style.display = 'none';
-    document.getElementById('phoneInput').value = '';
-    hideHeadersOnProfile(false);
-}
+
 
     </script>
 </body>
